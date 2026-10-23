@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#efebe4">
+  <meta name="description" content="把平常的日子，慢慢珍藏。一本需要密码才能打开的私人相册。">
+  <title>岁月相册</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23efebe4'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-size='40' fill='%237d4d36'%3E忆%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="masthead"><span class="brand"><span class="brand-mark">忆</span> 岁月相册</span><span class="edition">THE DAYS WE KEEP</span></header>
+    <section id="login" class="login">
+      <div class="book" aria-hidden="true"><span>岁<br>月<br>留<br>声</span><small>MEMORIES<br>& MOMENTS</small><i>收藏每一个平常的日子</i></div>
+      <div class="intro"><span class="eyebrow">A LITTLE COLLECTION OF US</span><h1>把日子，<br>一页一页珍藏。</h1><p>有些瞬间，值得慢慢翻看。<br>输入相册密码，重逢那些熟悉的时光。</p></div>
+      <form id="login-form"><label class="sr-only" for="password">相册密码</label><div class="password-field"><input id="password" type="password" autocomplete="current-password" placeholder="输入相册密码" required aria-describedby="login-status"><button type="button" id="reveal" aria-label="显示密码">显示</button></div><button class="primary" id="unlock" type="submit">打开相册 <span>↗</span></button><p id="login-status" class="status" role="status" aria-live="polite"></p></form>
+      <p class="private-note"><span>◇</span> 只与懂得这段时光的人分享</p>
+    </section>
+    <section id="album" class="album" hidden>
+      <div class="album-top"><div><span class="eyebrow">OUR FAMILY, OUR STORIES</span><h1 id="album-title">岁月相册</h1></div><button id="lock" class="text-button">锁定相册 <span>↗</span></button></div>
+      <div class="photo-stage" id="stage" tabindex="0" aria-label="相片区域，左右滑动或使用方向键翻页" aria-busy="false"><div class="photo-mount" id="mount"></div><div id="photo-status" class="photo-status" role="status" aria-live="polite"></div><button id="retry" hidden>重新加载</button></div>
+      <div class="caption"><div><span id="photo-number" class="eyebrow"></span><h2 id="photo-title"></h2></div><span id="effect-label" class="effect-label">时光慢慢走</span></div>
+      <div class="progress"><span id="progress-fill"></span></div>
+      <nav class="controls" aria-label="相册翻页"><button id="previous" class="round" aria-label="上一张">←</button><span id="counter" aria-live="polite">01 / 40</span><button id="next" class="round" aria-label="下一张">→</button></nav>
+      <div class="bottom-tools"><button id="autoplay" class="text-button" aria-pressed="false">▷ 自动播放</button><span>左右滑动 · 慢慢翻看</span><button id="fullscreen" class="text-button">全屏 ↗</button></div>
+    </section>
+    <footer>把平常的日子，过成值得回忆的时光。<span>WITH LOVE, ALWAYS.</span></footer>
+  </main>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
