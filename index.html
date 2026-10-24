@@ -8,6 +8,7 @@
   <title>岁月相册</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23efebe4'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-size='40' fill='%237d4d36'%3E忆%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./gesture.css">
 </head>
 <body>
   <main class="shell">
@@ -20,11 +21,12 @@
     </section>
     <section id="album" class="album" hidden>
       <div class="album-top"><div><span class="eyebrow">OUR FAMILY, OUR STORIES</span><h1 id="album-title">岁月相册</h1></div><button id="lock" class="text-button">锁定相册 <span>↗</span></button></div>
-      <div class="photo-stage" id="stage" tabindex="0" aria-label="相片区域，左右滑动或使用方向键翻页" aria-busy="false"><div class="photo-mount" id="mount"></div><div id="photo-status" class="photo-status" role="status" aria-live="polite"></div><button id="retry" hidden>重新加载</button></div>
+      <div class="photo-stage" id="stage" tabindex="0" aria-label="相片区域，左右滑动或使用方向键翻页" aria-busy="false"><div class="photo-mount" id="mount"></div><div id="heart-mosaic" class="heart-mosaic" aria-hidden="true" hidden></div><video id="camera-preview" class="camera-preview" autoplay muted playsinline hidden></video><div id="photo-status" class="photo-status" role="status" aria-live="polite"></div><button id="retry" hidden>重新加载</button></div>
       <div class="caption"><div><span id="photo-number" class="eyebrow"></span><h2 id="photo-title"></h2></div><span id="effect-label" class="effect-label">时光慢慢走</span></div>
       <div class="progress"><span id="progress-fill"></span></div>
       <nav class="controls" aria-label="相册翻页"><button id="previous" class="round" aria-label="上一张">←</button><span id="counter" aria-live="polite">01 / 40</span><button id="next" class="round" aria-label="下一张">→</button></nav>
       <div class="bottom-tools"><button id="autoplay" class="text-button" aria-pressed="false">▷ 自动播放</button><span>左右滑动 · 慢慢翻看</span><button id="fullscreen" class="text-button">全屏 ↗</button></div>
+      <div class="gesture-tools"><button id="gesture-toggle" class="gesture-button" type="button"><span class="gesture-icon">✋</span><span><strong id="gesture-title">开启手势操控</strong><small id="gesture-caption">张开手掌随机聚形 · 握拳排成圆形</small></span><span class="gesture-state" id="gesture-state">相机未开启</span></button></div>
     </section>
     <footer>把平常的日子，过成值得回忆的时光。<span>WITH LOVE, ALWAYS.</span></footer>
   </main>
